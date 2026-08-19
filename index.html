@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+    initial-scale=1.0,
+    maximum-scale=1.0,
+    user-scalable=no"
+>
+
+<title>My Love 💗</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+}
+
+body{
+
+    font-family:
+        "Noto Sans Myanmar",
+        "Myanmar Text",
+        Arial,
+        sans-serif;
+}
+
+
+/* =====================================================
+   PAGE 1
+===================================================== */
+
+#page1{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:10;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            #ffffff,
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #fff3f8,
+            #ffe0ee,
+            #f7e6ff
+        );
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    width:min(
+        90vw,
+        420px
+    );
+
+    padding:
+        24px
+        18px
+        28px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .68
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .9
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            170,
+            75,
+            135,
+            .20
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+/* =====================================================
+   QUESTION STICKER
+===================================================== */
+
+.sticker-box{
+
+    width:180px;
+
+    height:180px;
+
+    margin:
+        0 auto
+        8px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+#questionSticker{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    opacity:1;
+
+    transform:scale(1);
+
+    transition:
+        opacity .08s linear,
+        transform .08s linear;
+
+    filter:
+        drop-shadow(
+            0 12px 15px
+            rgba(
+                120,
+                50,
+                100,
+                .15
+            )
+        );
+}
+
+
+/* =====================================================
+   QUESTION TEXT
+===================================================== */
+
+.question{
+
+    color:#9a3d72;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    line-height:1.5;
+
+    text-shadow:
+        0 2px 0 white;
+}
+
+.question small{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#b17692;
+
+    font-size:12px;
+
+    font-weight:500;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.buttons{
+
+    position:relative;
+
+    width:100%;
+
+    height:125px;
+
+    margin-top:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+}
+
+.btn{
+
+    border:0;
+
+    outline:0;
+
+    height:54px;
+
+    min-width:145px;
+
+    padding:
+        0 20px;
+
+    border-radius:999px;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    touch-action:manipulation;
+
+    transition:
+        transform .15s ease,
+        opacity .15s ease;
+}
+
+
+/* =====================================================
+   YES
+===================================================== */
+
+#yesBtn{
+
+    position:relative;
+
+    z-index:30;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #df5f9f,
+            #b66ddd
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(
+            190,
+            70,
+            140,
+            .30
+        );
+}
+
+
+/* =====================================================
+   NO
+===================================================== */
+
+#noBtn{
+
+    position:relative;
+
+    z-index:40;
+
+    color:#8a6076;
+
+    background:#fff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            150,
+            90,
+            130,
+            .15
+        );
+}
+
+
+/* =====================================================
+   HINT
+===================================================== */
+
+.hint{
+
+    color:#bd86a2;
+
+    font-size:12px;
+
+    opacity:.75;
+}
+
+
+/* =====================================================
+   CLICK HEART
+===================================================== */
+
+.click-heart{
+
+    position:fixed;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+    font-size:25px;
+
+    animation:
+        heartPop
+        .7s
+        ease-out
+        forwards;
+}
+
+@keyframes heartPop{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.3);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            rotate(var(--r))
+            scale(1.5);
+    }
+}
+
+
+/* =====================================================
+   PAGE 2
+===================================================== */
+
+#page2{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff1f7 0%,
+            #ffdce9 50%,
+            #f3c3df 100%
+        );
+}
+
+#page2.show{
+
+    display:block;
+}
+
+
+/* =====================================================
+   FLOWER CONTAINER
+===================================================== */
+
+#flowers{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   FLOWER
+===================================================== */
+
+.flower{
+
+    position:absolute;
+
+    left:var(--left);
+
+    bottom:-180px;
+
+    width:var(--size);
+
+    height:var(--size);
+
+    object-fit:contain;
+
+    opacity:0;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(
+                100,
+                30,
+                70,
+                .18
+            )
+        );
+
+    animation:
+        flowerRise
+        var(--duration)
+        cubic-bezier(
+            .20,
+            .75,
+            .25,
+            1
+        )
+        forwards;
+}
+
+
+/* =====================================================
+   FLOWER RISE
+===================================================== */
+
+@keyframes flowerRise{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                var(--start-x),
+                160px
+            )
+            rotate(var(--start-r))
+            scale(.2);
+    }
+
+
+    12%{
+
+        opacity:1;
+    }
+
+
+    45%{
+
+        opacity:1;
+
+        transform:
+            translate(
+                var(--middle-x),
+                20px
+            )
+            rotate(20deg)
+            scale(.75);
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translate(
+                var(--move-x),
+                var(--final-y)
+            )
+            rotate(var(--final-r))
+            scale(var(--final-scale));
+    }
+}
+
+
+/* =====================================================
+   FINAL CENTER
+===================================================== */
+
+.final-center{
+
+    position:absolute;
+
+    z-index:200;
+
+    left:50%;
+
+    top:50%;
+
+    width:92vw;
+
+    max-width:420px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    text-align:center;
+
+    opacity:1;
+}
+
+
+/* =====================================================
+   FINAL STICKER
+===================================================== */
+
+.final-sticker{
+
+    width:
+        clamp(
+            160px,
+            52vw,
+            250px
+        );
+
+    height:
+        clamp(
+            160px,
+            52vw,
+            250px
+        );
+
+    margin:
+        0 auto
+        10px;
+
+    animation:
+        finalBounce
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+.final-sticker img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    filter:
+        drop-shadow(
+            0 15px 18px
+            rgba(
+                100,
+                40,
+                80,
+                .25
+            )
+        );
+}
+
+
+/* =====================================================
+   FINAL BOUNCE
+===================================================== */
+
+@keyframes finalBounce{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50%{
+
+        transform:
+            translateY(-18px)
+            rotate(2deg);
+    }
+}
+
+
+/* =====================================================
+   FINAL TITLE
+===================================================== */
+
+.final-title{
+
+    color:#d0448b;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            36px,
+            10vw,
+            58px
+        );
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 3px 0 white;
+
+    animation:
+        textFloat
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-message{
+
+    margin-top:7px;
+
+    color:#9d426f;
+
+    font-size:
+        clamp(
+            15px,
+            4.5vw,
+            20px
+        );
+
+    font-weight:800;
+
+    line-height:1.8;
+}
+
+@keyframes textFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-5px);
+    }
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.float-heart{
+
+    position:absolute;
+
+    left:var(--left);
+
+    bottom:-60px;
+
+    z-index:80;
+
+    font-size:var(--size);
+
+    opacity:0;
+
+    animation:
+        heartRise
+        var(--duration)
+        linear
+        forwards;
+}
+
+@keyframes heartRise{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0)
+            scale(.5);
+    }
+
+    15%{
+
+        opacity:.9;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translateY(-115vh)
+            translateX(var(--move))
+            rotate(var(--rotate))
+            scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkle{
+
+    position:absolute;
+
+    z-index:150;
+
+    color:#fff;
+
+    font-size:var(--size);
+
+    opacity:0;
+
+    animation:
+        sparkle
+        2s
+        var(--delay)
+        ease-in-out
+        infinite;
+}
+
+@keyframes sparkle{
+
+    0%,
+    100%{
+
+        opacity:0;
+
+        transform:
+            scale(.3)
+            rotate(0);
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:
+            scale(1.4)
+            rotate(180deg);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:500px){
+
+    .sticker-box{
+
+        width:145px;
+
+        height:145px;
+    }
+
+    .question{
+
+        font-size:22px;
+    }
+
+    .btn{
+
+        min-width:135px;
+
+        height:51px;
+
+        font-size:14px;
+    }
+
+    .buttons{
+
+        height:110px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section id="page1">
+
+    <div class="card">
+
+        <div class="sticker-box">
+
+            <img
+                id="questionSticker"
+                src="question-stickers/cover-1.thumb256%20(1).gif"
+                alt="sticker"
+            >
+
+        </div>
+
+
+        <div class="question">
+
+            မင်းငါ့ကို ချစ်လား? 🥺💗
+
+            <small>
+                အမှန်အတိုင်းရွေးနော် 👀
+            </small>
+
+        </div>
+
+
+        <div
+            class="buttons"
+            id="buttonArea"
+        >
+
+            <button
+                class="btn"
+                id="yesBtn"
+            >
+                ချစ်ပါတယ် 💗
+            </button>
+
+
+            <button
+                class="btn"
+                id="noBtn"
+            >
+                မချစ်ဘူး 🥺
+            </button>
+
+        </div>
+
+
+        <div class="hint">
+
+            💕 တစ်ခုခုကို နှိပ်ကြည့်ပါ
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+<section id="page2">
+
+
+    <div id="flowers"></div>
+
+
+    <div
+        class="sparkle"
+        style="
+            left:12%;
+            top:18%;
+            --size:25px;
+            --delay:2s;
+        "
+    >
+        ✨
+    </div>
+
+
+    <div
+        class="sparkle"
+        style="
+            right:12%;
+            top:25%;
+            --size:30px;
+            --delay:2.7s;
+        "
+    >
+        ✨
+    </div>
+
+
+    <div
+        class="sparkle"
+        style="
+            left:18%;
+            bottom:18%;
+            --size:22px;
+            --delay:3.3s;
+        "
+    >
+        ✨
+    </div>
+
+
+    <div
+        class="sparkle"
+        style="
+            right:18%;
+            bottom:22%;
+            --size:26px;
+            --delay:3.8s;
+        "
+    >
+        ✨
+    </div>
+
+
+    <!-- FINAL CENTER -->
+
+    <div class="final-center">
+
+        <div class="final-sticker">
+
+            <img
+                src="final-sticker/cover.thumb256%20(1).gif"
+                alt="final sticker"
+            >
+
+        </div>
+
+
+        <div class="final-title">
+
+            I LOVE YOU 💗
+
+        </div>
+
+
+        <div class="final-message">
+
+            ရေးချင်တာရေး 💕<br>
+
+            စောက်ပေါမလုပ်နဲ့ 🌸
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const page1 =
+    document.getElementById(
+        "page1"
+    );
+
+const page2 =
+    document.getElementById(
+        "page2"
+    );
+
+const questionSticker =
+    document.getElementById(
+        "questionSticker"
+    );
+
+const yesBtn =
+    document.getElementById(
+        "yesBtn"
+    );
+
+const noBtn =
+    document.getElementById(
+        "noBtn"
+    );
+
+const buttonArea =
+    document.getElementById(
+        "buttonArea"
+    );
+
+const flowers =
+    document.getElementById(
+        "flowers"
+    );
+
+
+/* =====================================================
+   QUESTION STICKERS
+===================================================== */
+
+const questionStickers = [
+
+    "question-stickers/cover-1.thumb256 (1).gif",
+
+    "question-stickers/cover-1.thumb256.gif",
+
+    "question-stickers/cover.thumb25.gif",
+
+    "question-stickers/cover.thumb256.gif"
+
+];
+
+
+/* =====================================================
+   PRELOAD STICKERS
+===================================================== */
+
+questionStickers.forEach(
+    function(src){
+
+        const img =
+            new Image();
+
+        img.src =
+            encodeURI(src);
+
+    }
+);
+
+
+/* =====================================================
+   FINAL STICKER PRELOAD
+===================================================== */
+
+const finalSticker =
+    new Image();
+
+finalSticker.src =
+    encodeURI(
+        "final-sticker/cover.thumb256 (1).gif"
+    );
+
+
+/* =====================================================
+   STICKER RANDOM SYSTEM
+===================================================== */
+
+let remainingStickers =
+    [...questionStickers];
+
+let noClicks = 0;
+
+
+function getNextSticker(){
+
+    if(
+        remainingStickers.length === 0
+    ){
+
+        remainingStickers =
+            [...questionStickers];
+
+    }
+
+
+    const index =
+        Math.floor(
+            Math.random() *
+            remainingStickers.length
+        );
+
+
+    const selected =
+        remainingStickers[index];
+
+
+    remainingStickers.splice(
+        index,
+        1
+    );
+
+
+    return selected;
+}
+
+
+/* =====================================================
+   CHANGE STICKER - INSTANT
+===================================================== */
+
+function changeSticker(){
+
+    const next =
+        getNextSticker();
+
+
+    questionSticker.src =
+        encodeURI(next);
+
+
+    questionSticker.style.opacity =
+        "1";
+
+    questionSticker.style.transform =
+        "scale(1)";
+
+}
+
+
+/* =====================================================
+   NO BUTTON
+===================================================== */
+
+noBtn.addEventListener(
+    "click",
+    function(e){
+
+        e.preventDefault();
+
+
+        noClicks++;
+
+
+        /* Sticker ချက်ချင်းပြောင်း */
+
+        changeSticker();
+
+
+        /* Heart effect */
+
+        createHearts(
+            e.clientX,
+            e.clientY,
+            8
+        );
+
+
+        /* Button သေး */
+
+        const scale =
+            Math.max(
+                .08,
+                1 -
+                noClicks * .13
+            );
+
+
+        noBtn.style.transform =
+            `scale(${scale})`;
+
+
+        /* နေရာပြောင်း */
+
+        moveNoButton();
+
+
+        const texts = [
+
+            "မချစ်ဘူး 🥺",
+
+            "သေချာလား? 😭",
+
+            "တကယ်ကြီးလား? 🥹",
+
+            "မချစ်ဘူးဆိုတာ? 😭",
+
+            "နောက်တစ်ခါစဉ်းစား 🥺",
+
+            "မရဘူးနော် 😂",
+
+            "ဟိုဘက်ကိုပြေးမယ် 😭"
+
+        ];
+
+
+        noBtn.textContent =
+            texts[
+                Math.min(
+                    noClicks,
+                    texts.length - 1
+                )
+            ];
+
+
+        if(
+            noClicks >= 7
+        ){
+
+            noBtn.style.opacity =
+                "0";
+
+            noBtn.style.pointerEvents =
+                "none";
+
+            noBtn.style.transform =
+                "scale(.01)";
+
+            setTimeout(
+                function(){
+
+                    noBtn.style.display =
+                        "none";
+
+                },
+                150
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   MOVE NO BUTTON
+===================================================== */
+
+function moveNoButton(){
+
+    const area =
+        buttonArea.getBoundingClientRect();
+
+
+    const button =
+        noBtn.getBoundingClientRect();
+
+
+    const maxX =
+        Math.max(
+            0,
+            area.width -
+            button.width
+        );
+
+
+    const maxY =
+        Math.max(
+            0,
+            area.height -
+            button.height
+        );
+
+
+    const x =
+        (
+            Math.random() *
+            maxX
+        ) -
+        maxX / 2;
+
+
+    const y =
+        (
+            Math.random() *
+            maxY
+        ) -
+        maxY / 2;
+
+
+    noBtn.style.position =
+        "absolute";
+
+
+    noBtn.style.left =
+        "50%";
+
+
+    noBtn.style.top =
+        "50%";
+
+
+    noBtn.style.marginLeft =
+        x + "px";
+
+
+    noBtn.style.marginTop =
+        y + "px";
+
+}
+
+
+/* =====================================================
+   YES BUTTON
+===================================================== */
+
+yesBtn.addEventListener(
+    "click",
+    function(e){
+
+        createHearts(
+            e.clientX,
+            e.clientY,
+            20
+        );
+
+
+        openFinalPage();
+
+    }
+);
+
+
+/* =====================================================
+   OPEN PAGE 2 - INSTANT
+===================================================== */
+
+function openFinalPage(){
+
+    page1.style.display =
+        "none";
+
+
+    page2.style.display =
+        "block";
+
+
+    page2.classList.add(
+        "show"
+    );
+
+
+          /* ပန်းတွေကို ချက်ချင်းစ */
+
+       createFlowers();
+
+
+       /* Hearts တွေလည်း ချက်ချင်းစ */
+
+       createFloatingHearts();
+
+}
+
+
+/* =====================================================
+   CLICK HEARTS
+===================================================== */
+
+function createHearts(
+    x,
+    y,
+    amount
+){
+
+    const types = [
+        "💗",
+        "💕",
+        "💖",
+        "💞",
+        "💓"
+    ];
+
+
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ){
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "click-heart";
+
+
+        heart.textContent =
+            types[
+                Math.floor(
+                    Math.random() *
+                    types.length
+                )
+            ];
+
+
+        heart.style.left =
+            x + "px";
+
+
+        heart.style.top =
+            y + "px";
+
+
+        heart.style.setProperty(
+            "--x",
+            (
+                -100 +
+                Math.random() * 200
+            ) + "px"
+        );
+
+
+        heart.style.setProperty(
+            "--y",
+            (
+                -120 +
+                Math.random() * 100
+            ) + "px"
+        );
+
+
+        heart.style.setProperty(
+            "--r",
+            (
+                -50 +
+                Math.random() * 100
+            ) + "deg"
+        );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(
+            function(){
+
+                heart.remove();
+
+            },
+            750
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOWER FILES
+===================================================== */
+
+const flowerFiles = [
+
+    "flowers/images.jpeg",
+
+    "flowers/images (1).jpeg"
+
+];
+
+
+/* =====================================================
+   CREATE FLOWERS
+===================================================== */
+
+function createFlowers(){
+
+    flowers.innerHTML = "";
+
+
+    /*
+       ပန်းအများကြီး
+    */
+
+    const total = 110;
+
+
+    for(
+        let i = 0;
+        i < total;
+        i++
+    ){
+
+        setTimeout(
+            function(){
+
+                createFlower();
+
+            },
+
+            i * 25
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CREATE ONE FLOWER
+===================================================== */
+
+function createFlower(){
+
+    const flower =
+        document.createElement("img");
+
+
+    flower.className =
+        "flower";
+
+
+    /*
+       Flower file random ရွေး
+    */
+
+    const file =
+        flowerFiles[
+            Math.floor(
+                Math.random() *
+                flowerFiles.length
+            )
+        ];
+
+
+    /*
+       filename မှာ space ပါလို့
+       encodeURI သုံးထားတယ်
+    */
+
+    flower.src =
+        encodeURI(file);
+
+
+    /*
+       Screen ဘယ်ညာ random
+    */
+
+    flower.style.setProperty(
+        "--left",
+        (
+            Math.random() * 100
+        ) + "%"
+    );
+
+
+    /*
+       ပန်းအရွယ်အစား
+    */
+
+    const size =
+        35 +
+        Math.random() * 85;
+
+
+    flower.style.setProperty(
+        "--size",
+        size + "px"
+    );
+
+
+    /*
+       တက်လာမယ့်အမြန်နှုန်း
+    */
+
+    const duration =
+        1.8 +
+        Math.random() * 2.8;
+
+
+    flower.style.setProperty(
+        "--duration",
+        duration + "s"
+    );
+
+
+    /*
+       အောက်ကနေထွက်တဲ့အချိန်
+       ဘယ်ညာရွေ့မှု
+    */
+
+    flower.style.setProperty(
+        "--start-x",
+        (
+            -100 +
+            Math.random() * 200
+        ) + "px"
+    );
+
+
+    /*
+       အလယ်လမ်းမှာ
+       နည်းနည်းဘေးရွေ့
+    */
+
+    flower.style.setProperty(
+        "--middle-x",
+        (
+            -50 +
+            Math.random() * 100
+        ) + "px"
+    );
+
+
+    /*
+       Screen တစ်ခုလုံးမှာ
+       random နေရာရပ်မယ်
+
+       အပေါ် = 5vh
+       အောက် = 95vh
+    */
+
+    const finalY =
+        -(
+            5 +
+            Math.random() * 90
+        ) + "vh";
+
+
+    flower.style.setProperty(
+        "--final-y",
+        finalY
+    );
+
+
+    /*
+       နောက်ဆုံး ဘယ်ညာ
+       နည်းနည်းရွေ့
+    */
+
+    flower.style.setProperty(
+        "--move-x",
+        (
+            -80 +
+            Math.random() * 160
+        ) + "px"
+    );
+
+
+    /*
+       စတင်လှည့်မှု
+    */
+
+    flower.style.setProperty(
+        "--start-r",
+        (
+            -80 +
+            Math.random() * 160
+        ) + "deg"
+    );
+
+
+    /*
+       နောက်ဆုံးလှည့်မှု
+    */
+
+    flower.style.setProperty(
+        "--final-r",
+        (
+            -25 +
+            Math.random() * 50
+        ) + "deg"
+    );
+
+
+    /*
+       ပန်းတစ်ပွင့်ချင်း
+       size မတူအောင်
+    */
+
+    flower.style.setProperty(
+        "--final-scale",
+        (
+            .65 +
+            Math.random() * .65
+        )
+    );
+
+
+    /*
+       Container ထဲထည့်
+    */
+
+    flowers.appendChild(
+        flower
+    );
+
+
+    /*
+       File မတွေ့ရင်
+       broken image မပြ
+    */
+
+    flower.onerror =
+        function(){
+
+            flower.style.display =
+                "none";
+
+        };
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createFloatingHearts(){
+
+    const hearts = [
+
+        "💗",
+        "💕",
+        "💖",
+        "💞",
+        "🌸"
+
+    ];
+
+
+    for(
+        let i = 0;
+        i < 35;
+        i++
+    ){
+
+        setTimeout(
+            function(){
+
+                const h =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                h.className =
+                    "float-heart";
+
+
+                h.textContent =
+                    hearts[
+                        Math.floor(
+                            Math.random() *
+                            hearts.length
+                        )
+                    ];
+
+
+                h.style.setProperty(
+                    "--left",
+                    (
+                        Math.random() *
+                        100
+                    ) + "%"
+                );
+
+
+                h.style.setProperty(
+                    "--size",
+                    (
+                        18 +
+                        Math.random() * 30
+                    ) + "px"
+                );
+
+
+                h.style.setProperty(
+                    "--duration",
+                    (
+                        3 +
+                        Math.random() * 3
+                    ) + "s"
+                );
+
+
+                h.style.setProperty(
+                    "--move",
+                    (
+                        -80 +
+                        Math.random() * 160
+                    ) + "px"
+                );
+
+
+                h.style.setProperty(
+                    "--rotate",
+                    (
+                        -60 +
+                        Math.random() * 120
+                    ) + "deg"
+                );
+
+
+                flowers.appendChild(
+                    h
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        h.remove();
+
+                    },
+                    6500
+                );
+
+
+            },
+            i * 120
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   PRELOAD EVERYTHING
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        /*
+           Question stickers
+        */
+
+        questionStickers.forEach(
+            function(src){
+
+                const img =
+                    new Image();
+
+                img.src =
+                    encodeURI(src);
+
+            }
+        );
+
+
+        /*
+           Final sticker
+        */
+
+        const finalImg =
+            new Image();
+
+
+        finalImg.src =
+            encodeURI(
+                "final-sticker/cover.thumb256 (1).gif"
+            );
+
+
+        /*
+           Flowers
+        */
+
+        flowerFiles.forEach(
+            function(src){
+
+                const img =
+                    new Image();
+
+                img.src =
+                    encodeURI(src);
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   PREVENT DOUBLE TAP ZOOM
+===================================================== */
+
+let lastTouchEnd = 0;
+
+
+document.addEventListener(
+    "touchend",
+    function(e){
+
+        const now =
+            Date.now();
+
+
+        if(
+            now -
+            lastTouchEnd <
+            300
+        ){
+
+            e.preventDefault();
+
+        }
+
+
+        lastTouchEnd =
+            now;
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
+
+
+ 
